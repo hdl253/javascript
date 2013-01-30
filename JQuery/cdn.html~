@@ -1,0 +1,12 @@
+<html>
+	<head>
+		<script src="http://code.jquery.com/jquery-1.7.2.js"></script>
+
+</head>
+<body>
+	<div id="div1">333</div>
+	<script type="text/javascript">
+		$("#div1").length;
+	</script>
+</body>
+</html>

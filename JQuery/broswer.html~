@@ -1,0 +1,16 @@
+<html>
+	<head>
+		<script src="jquery-1.4.4.min.js"></script>
+
+</head>
+<body>
+<script type="text/javascript">
+	alert($.browser.msie);
+
+	document.write($.browser.msie)
+	alert($.browser.opera);
+	alert($.browser.mazilla)
+	alert($.browser.safari);
+	</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>closure</title>
+</head>
+<body style="background-color:red;">
+<div style="width:800px;height:1000px;"></div>
+</body>
+<script language="javascript">
+var fade = function(node){
+	var level = 1;
+	var step = function(){
+		var hex = level.toString(16);
+		node.style.backgroundColor ='#FFF'+hex+hex+hex;
+		if(level<15){
+			level += 1;
+		 	setTimeout(setp,100);
+		}
+	}
+	setTimeout(step,100);
+}
+fade(document.body);
+</script>
+</html>

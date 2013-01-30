@@ -1,0 +1,38 @@
+<html>
+	<head></head>
+	<body>
+<script type="text/javascript">
+	var x=10
+function getx()
+{
+	return x;
+}
+function closure(funargs)
+{
+	var x=20;
+	var x1 = funargs();
+	document.writeln(x1);
+}
+closure(getx);
+</script>
+<script type="text/javascript">
+	var a = 10;
+function closure1()
+{
+	var a = 20
+return function()
+{
+			//a++;
+			return (++a);
+		}
+}
+function closure1t(funargs)
+{
+	var a = funargs();
+	document.writeln(a());
+	document.writeln(a());
+}
+closure1t(closure1);
+</script>
+</body>
+</html>

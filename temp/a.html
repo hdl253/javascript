@@ -1,0 +1,30 @@
+<html>
+<head></head>
+<body>
+<script type="text/javascript">
+function dws(s){
+	document.write(s+"<br />");
+}
+function Foo(a){
+	function _pc(){
+		return a;
+	}
+	
+	bar = function(){
+		dws("foo"+_pc()+"!");
+	}
+	
+	this.bar2 = function(){
+		dws("foo"+_pc()+"!");
+	}
+}
+var obj = new Foo("bar");
+alert(obj);
+//obj._pc();
+//obj.bar();
+obj._pc;
+obj.bar;
+obj.bar2();
+</script>
+</body>
+</html>

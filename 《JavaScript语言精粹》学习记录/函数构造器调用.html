@@ -1,0 +1,19 @@
+<html>
+<head>
+<script>
+var Quo = function(string){
+	this.status = string;
+};
+Quo.prototype.get_status = function(){
+	return this.status;
+};
+var myQuo = Quo("aaa");
+document.writeln(this.status);
+var myQuoa = new Quo("bbb");
+document.writeln(myQuoa.get_status());
+document.writeln(this.status);
+</script>
+<head>
+<body>
+</body>
+</html>

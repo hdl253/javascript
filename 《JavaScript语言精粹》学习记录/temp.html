@@ -1,0 +1,25 @@
+<script type="text/javascript">
+	var i=1e2;
+	document.writeln(i);
+function getinfinity()
+{
+	var a= NaN;
+	var f = function()
+	{
+		if (isNaN(a + 1)==false)
+			document.writeln(a);
+		else if (a==Infinity)
+		{
+			document.writeln("Infinity");
+		}
+		else
+		{
+			a=a+1e99999999999999999;
+			setTimeout(f,1);
+		}
+		
+	}
+	f();
+};
+getinfinity();
+</script>
