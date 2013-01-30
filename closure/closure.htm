@@ -16,7 +16,44 @@ function foo1(x) {
   }
 }
 var bar = foo1(2); // bar is now a closure.
+var bar1=foo1(2);
 bar(10);
 bar(10);
+bar1(10);
+bar1(10);
 
+var data = [];
+for (var k=0; k < 3; k++){
+	data[k]=function(){
+		alert(k);
+	};
+}
+data[0]();
+data[1]();
+data[2]();
+//这段比较费解，居然弹出了0,1,2，难道这个k是dynimic scope ?
+for (var k=0; k < 3; k++){
+	data[k]();
+}
+for (var i=0; i < 3; i++){
+	data[i]();
+}
+
+for (var k=0;k<3;k++){
+	data[k]=(function(x){
+		return function(){
+			alert(x);
+		};
+	})(k);
+}
+data[0]();
+data[1]();
+data[2]();
+//这段比较费解，居然弹出了0,1,2，难道这个k是dynimic scope ?
+for (var k=0; k < 3; k++){
+	data[k]();
+}
+for (var i=0; i < 3; i++){
+	data[i]();
+}
 </script>
