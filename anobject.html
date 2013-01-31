@@ -1,0 +1,39 @@
+<html>
+<head>
+</head>
+<body>
+<script type="text/javascript">
+var foo=
+{
+	name:"h",
+	age:30
+};
+
+var newline=function(){
+	document.write("<br />");
+}
+
+document.write(foo.__proto__);
+newline();
+document.write(foo.__proto__.__proto__);
+newline();
+var A = {
+	x:10,
+	calculate:function (z){
+		return this.x + this.y + z;
+	}
+}
+var B={
+	y:20,
+	__proto__:A
+}
+var C={
+	y:30,
+	__proto__:A
+}
+document.write(B.calculate(30));
+newline();
+document.write(C.calculate(40));
+newline();
+</script></body>
+</html>

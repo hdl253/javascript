@@ -1,0 +1,26 @@
+<html>
+<head>
+<script type="text/javascript">
+var name = "Bob";  
+var nameObj ={  
+    name : "Tom",  
+    showName : function(){  
+        alert(this.name);  
+    },  
+    waitShowName : function(){
+        var that = this;
+        setTimeout(that.showName, 1000);
+    }
+}; 
+ 
+nameObj.waitShowName();
+
+//////////////////////////////
+
+
+var fun = new Function("alert(this)");
+fun();
+</script>
+</head>
+<body></body>
+</html>
