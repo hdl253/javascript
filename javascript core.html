@@ -1,0 +1,69 @@
+<html>
+<head>
+</head>
+<body>
+<script type="text/javascript">
+var foo=
+{
+	name:"h",
+	age:30
+};
+
+var console=function(x){
+	document.write(x);
+}
+var consoleline=function(x){
+	document.write(x);
+	document.write("<br />");
+}
+
+consoleline(foo.__proto__);
+
+consoleline(foo.__proto__.__proto__);
+
+var A = {
+	x:10,
+	calculate:function (z){
+		return this.x + this.y + z;
+	}
+}
+var B={
+	y:20,
+	__proto__:A
+}
+var C={
+	y:30,
+	__proto__:A
+}
+consoleline(B.calculate(30));
+
+consoleline(C.calculate(40));
+
+
+//closure
+var cx = 10;
+function cfoo(x)
+{
+	
+	console(x);
+	console(":");
+	consoleline(this.cx);
+}
+cfoo.cx=20;
+cfoo.prototype.cx=30;
+cfoo("cfoo()");
+cfoo.prototype.constructor("cfoo.prototype.constructor");
+var cbar={
+	cx:40,
+	cbaz:cfoo
+}
+cbar.cbaz("cbar.cbaz");
+(cbar.cbaz)("(cbar.cbaz)");
+(cbar.cbaz=cbar.cbaz)("(cbar.cbaz=cbar.cbaz)");
+(cbar.cbaz,cbar.cbaz)("(cbar.cbaz,cbar.cbaz)");
+(false || cbar.cbaz)("(false || cbar.cbaz)");
+var cothercfoo=cbar.cbaz;
+cothercfoo("cothercfoo");
+
+</script></body>
+</html>
