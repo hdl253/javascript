@@ -1,0 +1,103 @@
+<html>
+<head>
+<script type="text/javascript" src="util.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+
+
+
+consoleline("////////////////////////////////////////");
+
+function foo(x, y, z) {
+  
+  // quantity of defined function arguments (x, y, z)
+  consolepair("foo.length",foo.length); // 3
+ 
+  // quantity of really passed arguments (only x, y)
+  consolepair("arguments.length",arguments.length); // 2
+ 
+  // reference of a function to itself
+  consolepair("arguments.callee === foo",arguments.callee === foo); // true
+  
+  // parameters sharing
+ 
+  consolepair(x === arguments[0]); // true
+  consolepair("x",x); // 10
+  
+  arguments[0] = 20;
+  consolepair("x",x); // 20
+  
+  x = 30;
+  consolepair("arguments[0]",arguments[0]); // 30
+  
+  // however, for not passed argument z,
+  // related index-property of the arguments
+  // object is not shared
+  
+  z = 40;
+  consolepair("arguments[2]",arguments[2]); // undefined
+  
+  arguments[2] = 50;
+  consolepair("z",z); // 40
+  
+}
+  
+foo(10, 20);
+
+
+consoleline("////////////////////////////////////////");
+
+console("x:")
+consoleline(x);
+
+var x = 10;
+
+console("x:");
+consoleline(x);
+
+x=20;
+
+function x(){};
+
+console("x:");
+consoleline(x);
+
+
+consoleline("////////////////////////////////////////");
+
+if(true)
+	var a=1;
+else
+	var b=1;
+
+console("a:");
+consoleline(a);
+console("b:");
+consoleline(b);
+
+
+consoleline("////////////////////////////////////////");
+
+consoleline("about varibles:");
+{
+	try
+	{
+	consolepair("a1",a1); 
+	}
+	catch(e)
+	{
+		consolepair("a1",e);
+	}
+	consolepair("var b1",b1);
+	a1=10;
+	var b1 = 20;
+}
+
+consoleline("////////////////////////////////////////");
+consolepair("window.sb",window.sb);
+
+
+
+</script></body>
+</html>
